@@ -63,7 +63,7 @@
         .url-bar { background: #fff; border-radius: 4px; flex-grow: 1; margin-left: 10px; height: 24px; border: 1px solid #E2E8F0; }
         
         .mockup-content {
-            height: 450px;
+            height: 500px;
             overflow-y: auto;
         }
         .mockup-content::-webkit-scrollbar { width: 4px; }
@@ -256,6 +256,7 @@
         </div>
     </section>
 
+    <!-- Project 1: XPEL System -->
     <section id="projects" class="bg-white border-t border-gray-100">
         <div class="max-w-7xl mx-auto px-6">
             <div class="mb-12">
@@ -288,27 +289,35 @@
                 <div class="absolute -right-20 -bottom-20 w-96 h-96 bg-blue-600 opacity-20 rounded-full blur-[100px] pointer-events-none"></div>
             </div>
 
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-16">
-                <div class="bg-[#F8FAFC] p-2 rounded-2xl border border-gray-200 minimal-shadow transform transition hover:-translate-y-1">
-                    <div class="bg-gray-100 rounded-xl overflow-hidden aspect-video">
-                        <img src="Screenshot 2026-06-10 014000.png" alt="XPEL Order Form" class="w-full h-full object-cover" onerror="this.src='https://placehold.co/600x400/1E293B/FFF?text=Order+Form'">
+            <!-- XPEL Screenshots (Uncropped Layout) -->
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-16 items-start">
+                
+                <!-- Order Form Image -->
+                <div class="bg-[#F8FAFC] p-4 rounded-2xl border border-gray-200 minimal-shadow flex flex-col justify-between h-full">
+                    <div class="mb-4">
+                        <h4 class="text-[#0F172A] font-bold text-lg">1. Order Management Form</h4>
+                        <p class="text-sm text-gray-500 mt-2 font-light">ฟอร์มบันทึกข้อมูลลูกค้าและตัวรถ พร้อม <strong class="text-gray-700">Validation Logic</strong> เพื่อป้องกันความผิดพลาด (Human Error) ตั้งแต่ขั้นตอนการรับข้อมูล</p>
                     </div>
-                    <div class="p-4 text-center">
-                        <h4 class="text-[#0F172A] font-semibold text-sm">Order Management Form</h4>
-                        <p class="text-xs text-gray-500 mt-1 font-light">ฟอร์มบันทึกข้อมูลลูกค้าและตัวรถ พร้อม Validation Logic ป้องกันข้อผิดพลาด</p>
-                    </div>
-                </div>
-                <div class="bg-[#F8FAFC] p-2 rounded-2xl border border-gray-200 minimal-shadow transform transition hover:-translate-y-1">
-                    <div class="bg-gray-100 rounded-xl overflow-hidden aspect-video">
-                        <img src="XPEL.png" alt="XPEL Dashboard" class="w-full h-full object-cover" onerror="this.src='https://placehold.co/600x400/1E293B/FFF?text=Data+Dashboard'">
-                    </div>
-                    <div class="p-4 text-center">
-                        <h4 class="text-[#0F172A] font-semibold text-sm">Administration Management Portal</h4>
-                        <p class="text-xs text-gray-500 mt-1 font-light">ระบบบริหารจัดการหลังบ้านสำหรับผู้ดูแลระบบ รองรับการปิดงาน ตัดสต๊อก ควบคุมข้อมูล และติดตามสถานะงานศูนย์กลางแบบ Real-Time</p>
+                    <div class="bg-white rounded-xl overflow-hidden shadow-sm border border-gray-100 flex-grow">
+                        <img src="xpelmain1.jpg" alt="XPEL Order Form" class="w-full h-auto object-contain" onerror="this.src='https://placehold.co/800x600/F1F5F9/0F172A?text=Order+Form'">
                     </div>
                 </div>
+
+                <!-- Admin & Inventory Dashboard Image -->
+                <div class="bg-[#F8FAFC] p-4 rounded-2xl border border-gray-200 minimal-shadow flex flex-col justify-between h-full">
+                    <div class="mb-4">
+                        <h4 class="text-[#0F172A] font-bold text-lg">2. Administration & Inventory Portal</h4>
+                        <p class="text-sm text-gray-500 mt-2 font-light">ระบบบริหารจัดการหลังบ้านสำหรับผู้ดูแลระบบ รองรับการปิดงาน ตัดสต๊อกฟิล์ม ควบคุมข้อมูล และติดตามสถานะงานจากศูนย์กลางแบบ <strong class="text-gray-700">Real-Time</strong></p>
+                    </div>
+                    <div class="bg-white rounded-xl overflow-hidden shadow-sm border border-gray-100 flex-grow flex flex-col gap-4 p-4">
+                        <img src="xpel05.jpg" alt="XPEL Inventory" class="w-full h-auto object-contain rounded border border-gray-100" onerror="this.src='https://placehold.co/800x400/F1F5F9/0F172A?text=Inventory+System'">
+                        <img src="XPEL.png" alt="XPEL Dashboard" class="w-full h-auto object-contain rounded border border-gray-100" onerror="this.src='https://placehold.co/800x400/F1F5F9/0F172A?text=Data+Dashboard'">
+                    </div>
+                </div>
+
             </div>
 
+            <!-- Features Grid (6 specific areas) -->
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-16">
                 <!-- 1. Inventory -->
                 <div class="bg-white p-6 rounded-2xl border border-gray-100 minimal-shadow hover:border-[#0F172A] transition-colors group">
@@ -338,7 +347,7 @@
                         <li><strong class="text-gray-700">Smart Expiry Calculation:</strong> คำนวณอายุรับประกันบวกเพิ่มอัตโนมัติ (+7 ปี PPF)</li>
                     </ul>
                 </div>
-                <!-- 4. Workflow (UPDATED) -->
+                <!-- 4. Workflow -->
                 <div class="bg-white p-6 rounded-2xl border border-gray-100 minimal-shadow hover:border-[#0F172A] transition-colors group">
                     <div class="w-10 h-10 bg-slate-50 text-xl rounded-xl flex items-center justify-center mb-3">🔄</div>
                     <h3 class="font-semibold text-[#0F172A] mb-2 text-sm">4. Workflow Automation & Job Control</h3>
@@ -357,7 +366,7 @@
                         <li><strong class="text-gray-700">No-Code Architecture:</strong> วาง Schema และ Key Constraints บน AppSheet</li>
                     </ul>
                 </div>
-                <!-- 6. Admin Control (UPDATED) -->
+                <!-- 6. Admin Control -->
                 <div class="bg-white p-6 rounded-2xl border border-gray-100 minimal-shadow hover:border-[#0F172A] transition-colors group">
                     <div class="w-10 h-10 bg-slate-50 text-xl rounded-xl flex items-center justify-center mb-3">🏢</div>
                     <h3 class="font-semibold text-[#0F172A] mb-2 text-sm">6. Administration & Operations Control</h3>
@@ -369,6 +378,7 @@
                 </div>
             </div>
 
+            <!-- Technical Highlight (Formula Showcase) -->
             <div class="bg-[#0F172A] rounded-3xl overflow-hidden shadow-2xl flex flex-col md:flex-row">
                 <div class="p-8 md:w-2/5 flex flex-col justify-center">
                     <div class="text-xs font-bold text-yellow-400 tracking-widest uppercase mb-2">Technical Highlight</div>
@@ -420,6 +430,7 @@
         </div>
     </section>
 
+    <!-- Project 1.5: Customer Warranty Portal -->
     <section id="customer-portal" class="bg-[#0F172A] text-white border-y border-[#1E293B]">
         <div class="max-w-7xl mx-auto px-6 py-16">
             <div class="text-center mb-16">
@@ -431,52 +442,60 @@
                 </p>
             </div>
 
-            <div class="flex flex-col lg:flex-row gap-12 items-center justify-center">
-                <div class="w-full lg:w-[40%] flex flex-col items-center">
-                    <div class="bg-white/5 p-6 rounded-2xl border border-white/10 relative text-center w-full max-w-sm transform transition hover:-translate-y-2 duration-300">
-                        <div class="absolute -top-4 -left-4 w-8 h-8 bg-yellow-400 text-[#0F172A] font-bold rounded-full flex items-center justify-center z-10 shadow-lg">1</div>
-                        <h4 class="text-yellow-400 font-semibold mb-4 tracking-wide">Physical Warranty Card</h4>
-                        <img src="การ์ดรับประกัน XPEL QR_FINAL-02.jpg" alt="XPEL Warranty Card Back" class="w-full h-auto rounded-lg shadow-xl border border-gray-700 mb-2" onerror="this.src='https://placehold.co/400x250/111/444?text=Warranty+Card'">
-                        <p class="text-sm text-slate-400 font-light mt-4">ลูกค้าสแกน QR Code ด้านหลังบัตรเพื่อเข้าสู่ระบบ</p>
+            <!-- Warranty Flow Display (Uncropped side by side) -->
+            <div class="flex flex-col lg:flex-row gap-8 items-stretch justify-center max-w-5xl mx-auto mb-12">
+                
+                <!-- Flow Step 1: Login -->
+                <div class="w-full lg:w-1/2 flex flex-col">
+                    <div class="bg-white/5 p-6 rounded-t-2xl border-x border-t border-white/10 text-center">
+                        <div class="inline-block w-8 h-8 bg-yellow-400 text-[#0F172A] font-bold rounded-full mb-3 flex items-center justify-center mx-auto">1</div>
+                        <h4 class="text-yellow-400 font-semibold mb-2">QR Scan & Login</h4>
+                        <p class="text-sm text-slate-400 font-light">ลูกค้าสแกนบัตรและกรอกข้อมูล</p>
+                    </div>
+                    <div class="mockup-browser w-full flex-grow border-white/10 rounded-t-none">
+                        <div class="mockup-header bg-[#1E293B] border-white/10">
+                            <div class="dot dot-red"></div><div class="dot dot-yellow"></div><div class="dot dot-green"></div>
+                        </div>
+                        <div class="mockup-content bg-[#f5f5f5] p-0 flex justify-center items-start pt-4">
+                            <img src="Warrantylogin.png" alt="Warranty Login Screen" class="w-[85%] h-auto shadow-md rounded" onerror="this.src='https://placehold.co/400x600/f5f5f5/333?text=Login'">
+                        </div>
                     </div>
                 </div>
 
-                <div class="hidden lg:flex text-yellow-400 text-3xl animate-pulse">➡</div>
-                <div class="lg:hidden text-yellow-400 text-3xl animate-pulse">⬇</div>
-
-                <div class="w-full lg:w-[50%] flex flex-col items-center">
-                    <div class="bg-white/5 p-6 rounded-2xl border border-white/10 relative text-center w-full transform transition hover:-translate-y-2 duration-300">
-                        <div class="absolute -top-4 -left-4 w-8 h-8 bg-yellow-400 text-[#0F172A] font-bold rounded-full flex items-center justify-center z-10 shadow-lg">2</div>
-                        <h4 class="text-yellow-400 font-semibold mb-4 tracking-wide">Web Application (Frontend & Backend)</h4>
-                        
-                        <div class="mockup-browser w-full max-w-sm mx-auto shadow-2xl">
-                            <div class="mockup-header">
-                                <div class="dot dot-red"></div><div class="dot dot-yellow"></div><div class="dot dot-green"></div>
-                                <div class="url-bar flex items-center px-2 text-[10px] text-gray-400 font-mono overflow-hidden">
-                                    xpel-warranty-check.web.app
-                                </div>
-                            </div>
-                            <div class="mockup-content bg-[#f5f5f5] p-0 relative">
-                                <img src="Warrantylogin.png" alt="Warranty Login Screen" class="w-full h-auto" onerror="this.src='https://placehold.co/400x800/f5f5f5/333?text=Warranty+App+Interface'">
-                            </div>
+                <!-- Flow Step 2: Result -->
+                <div class="w-full lg:w-1/2 flex flex-col">
+                    <div class="bg-white/5 p-6 rounded-t-2xl border-x border-t border-white/10 text-center">
+                        <div class="inline-block w-8 h-8 bg-yellow-400 text-[#0F172A] font-bold rounded-full mb-3 flex items-center justify-center mx-auto">2</div>
+                        <h4 class="text-yellow-400 font-semibold mb-2">Real-time Warranty Status</h4>
+                        <p class="text-sm text-slate-400 font-light">ระบบแสดงอายุประกันและรายละเอียดทันที</p>
+                    </div>
+                    <div class="mockup-browser w-full flex-grow border-white/10 rounded-t-none">
+                        <div class="mockup-header bg-[#1E293B] border-white/10">
+                            <div class="dot dot-red"></div><div class="dot dot-yellow"></div><div class="dot dot-green"></div>
                         </div>
-
-                        <div class="grid grid-cols-2 gap-4 mt-6 text-left">
-                            <div class="bg-[#0F172A] p-3 rounded-lg border border-slate-700">
-                                <div class="text-xs font-bold text-yellow-400 mb-1">Backend (GAS)</div>
-                                <div class="text-[11px] text-slate-300 font-light">API ค้นหาความเร็วสูงด้วยโครงสร้าง <strong class="text-white">Hash Map (O(1))</strong> ดึงข้อมูลจากฐานข้อมูลหลัก</div>
-                            </div>
-                            <div class="bg-[#0F172A] p-3 rounded-lg border border-slate-700">
-                                <div class="text-xs font-bold text-yellow-400 mb-1">Frontend (JS/ES6)</div>
-                                <div class="text-[11px] text-slate-300 font-light">คำนวณวันหมดอายุอัตโนมัติ (Date Parsing) และสร้าง Tabs ข้อมูลด้วย Dynamic DOM</div>
-                            </div>
+                        <div class="mockup-content bg-[#f5f5f5] p-0 flex justify-center items-start pt-4">
+                            <img src="Warranty.png" alt="Warranty Result Screen" class="w-[85%] h-auto shadow-md rounded" onerror="this.src='https://placehold.co/400x600/f5f5f5/333?text=Result'">
                         </div>
                     </div>
                 </div>
             </div>
+
+            <!-- Tech details below -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+                <div class="bg-[#0F172A] p-5 rounded-xl border border-slate-700 text-left">
+                    <div class="text-sm font-bold text-yellow-400 mb-2 flex items-center gap-2"><span>⚙️</span> Backend (GAS)</div>
+                    <p class="text-sm text-slate-300 font-light leading-relaxed">พัฒนา API ค้นหาความเร็วสูงด้วยโครงสร้าง <strong class="text-white">Hash Map (O(1))</strong> ดึงข้อมูลจาก Google Sheets (Data Lake) ทำให้สืบค้นข้อมูลนับหมื่นรายการได้ในระดับมิลลิวินาที</p>
+                </div>
+                <div class="bg-[#0F172A] p-5 rounded-xl border border-slate-700 text-left">
+                    <div class="text-sm font-bold text-yellow-400 mb-2 flex items-center gap-2"><span>💻</span> Frontend (HTML/JS)</div>
+                    <p class="text-sm text-slate-300 font-light leading-relaxed">พัฒนาระบบ <strong class="text-white">Dynamic DOM</strong> สร้างหน้าต่างแสดงผลตามจำนวนรถอัตโนมัติ พร้อมลอจิกแปลงวันที่ (Date Parsing) เพื่อเปลี่ยนสีสถานะ แดง/เขียว ทันที</p>
+                </div>
+            </div>
+
         </div>
     </section>
 
+    <!-- Project: RIZENIC BI Dashboard -->
     <section id="rizenic" class="bg-[#F8FAFC] border-y border-gray-200">
         <div class="max-w-7xl mx-auto px-6">
             <div class="text-center mb-16">
@@ -484,7 +503,7 @@
                 <h2 class="text-3xl md:text-4xl font-bold text-[#0F172A] mb-4">RIZENIC Operations Management Platform & Executive BI Dashboard</h2>
                 <div class="w-12 h-1 bg-[#0F172A] mx-auto mb-6"></div>
                 <p class="text-gray-600 max-w-3xl mx-auto font-light text-lg leading-relaxed">
-                    ออกแบบและพัฒนาระบบบริหารงานซ่อมสีและตัวถังแบบ End-to-End ด้วย AppSheet เชื่อมโยงข้อมูลระหว่างฝ่ายขาย บริการ ซ่อม และบัญชี ผ่านฐานข้อมูลกลาง พร้อมแสดงผลระดับผู้บริหารผ่าน Looker Studio
+                    ออกแบบและพัฒนาระบบบริหารงานซ่อมสีและตัวถังแบบ End-to-End ด้วย AppSheet เพื่อรองรับกระบวนการตั้งแต่รับลูกค้าจนถึงปิดงาน พร้อมเชื่อมโยงข้อมูลแสดงผลผ่าน Looker Studio
                 </p>
             </div>
 
@@ -497,18 +516,18 @@
                         <h3 class="text-lg font-bold text-[#0F172A]">Complex Workflow Management</h3>
                     </div>
                     <p class="text-sm text-gray-600 font-light mb-4">
-                        ออกแบบ Workflow ทางธุรกิจที่รองรับสถานะงานมากกว่า 20 ขั้นตอน ครอบคลุมทุกกระบวนการดำเนินงาน ลดปัญหาข้อมูลตกหล่น
+                        ออกแบบ Workflow ทางธุรกิจที่รองรับสถานะงานมากกว่า 20 ขั้นตอน ครอบคลุมทุกกระบวนการดำเนินงานของศูนย์บริการ ลดปัญหาข้อมูลตกหล่น
                     </p>
                     <div class="flex flex-wrap gap-2 mt-4">
-                        <span class="px-2 py-1 bg-slate-50 border border-slate-200 text-slate-600 text-xs rounded-md">Customer Inquiry</span>
+                        <span class="px-2 py-1 bg-slate-50 border border-slate-200 text-slate-600 text-[10px] rounded-md">Inquiry</span>
                         <span class="text-slate-400 text-xs py-1">➔</span>
-                        <span class="px-2 py-1 bg-slate-50 border border-slate-200 text-slate-600 text-xs rounded-md">Insurance Quotation</span>
+                        <span class="px-2 py-1 bg-slate-50 border border-slate-200 text-slate-600 text-[10px] rounded-md">Quotation</span>
                         <span class="text-slate-400 text-xs py-1">➔</span>
-                        <span class="px-2 py-1 bg-slate-50 border border-slate-200 text-slate-600 text-xs rounded-md">Approval</span>
+                        <span class="px-2 py-1 bg-slate-50 border border-slate-200 text-slate-600 text-[10px] rounded-md">Approval</span>
                         <span class="text-slate-400 text-xs py-1">➔</span>
-                        <span class="px-2 py-1 bg-indigo-50 border border-indigo-200 text-indigo-700 text-xs rounded-md font-medium">Repair Process</span>
+                        <span class="px-2 py-1 bg-indigo-50 border border-indigo-200 text-indigo-700 text-[10px] rounded-md font-medium">Repair Process</span>
                         <span class="text-slate-400 text-xs py-1">➔</span>
-                        <span class="px-2 py-1 bg-slate-50 border border-slate-200 text-slate-600 text-xs rounded-md">Delivery & Billing</span>
+                        <span class="px-2 py-1 bg-slate-50 border border-slate-200 text-slate-600 text-[10px] rounded-md">Delivery & Billing</span>
                     </div>
                 </div>
 
@@ -519,7 +538,7 @@
                         <h3 class="text-lg font-bold text-[#0F172A]">Production & Repair Station Tracking</h3>
                     </div>
                     <p class="text-sm text-gray-600 font-light mb-4">
-                        พัฒนาระบบติดตามงานซ่อมรายสถานี เพื่อบริหารกำลังการผลิตและตรวจสอบคอขวด (Bottleneck) ของกระบวนการซ่อมได้แบบ Real-Time
+                        พัฒนาระบบติดตามงานซ่อมรายสถานี เพื่อบริหารกำลังการผลิตและตรวจสอบคอขวด (Bottleneck) แบบ Real-Time
                     </p>
                     <div class="flex flex-wrap gap-2 mt-4">
                         <span class="px-2.5 py-1 bg-orange-50 text-orange-700 text-xs rounded-full border border-orange-100">เคาะ / โป๊ว</span>
@@ -527,8 +546,7 @@
                         <span class="px-2.5 py-1 bg-orange-50 text-orange-700 text-xs rounded-full border border-orange-100">พ่นสี</span>
                         <span class="px-2.5 py-1 bg-orange-50 text-orange-700 text-xs rounded-full border border-orange-100">ประกอบ</span>
                         <span class="px-2.5 py-1 bg-orange-50 text-orange-700 text-xs rounded-full border border-orange-100">ขัดสี</span>
-                        <span class="px-2.5 py-1 bg-orange-50 text-orange-700 text-xs rounded-full border border-orange-100">เก็บงาน/QC</span>
-                        <span class="px-2.5 py-1 bg-gray-100 text-gray-600 text-xs rounded-full border border-gray-200">+ อีก 6 สถานี</span>
+                        <span class="px-2.5 py-1 bg-gray-100 text-gray-600 text-xs rounded-full border border-gray-200">+ อีก 5 สถานี</span>
                     </div>
                 </div>
 
@@ -539,7 +557,7 @@
                         <h3 class="text-lg font-bold text-[#0F172A]">Real-Time Data Automation & BI</h3>
                     </div>
                     <p class="text-sm text-gray-600 font-light mb-4">
-                        ออกแบบ Data Flow เชื่อมข้อมูลจาก AppSheet ไปยัง Executive Dashboard (Looker Studio) แบบอัตโนมัติ โดยไม่ต้องทำรายงานเอง
+                        ออกแบบ Data Flow เชื่อมข้อมูลจาก AppSheet ไปยัง Executive Dashboard แบบอัตโนมัติ ครอบคลุมการวิเคราะห์ข้อมูลสำคัญ
                     </p>
                     <ul class="grid grid-cols-2 gap-2 text-xs text-gray-500 font-light list-disc pl-4">
                         <li>Status Monitoring</li>
@@ -558,43 +576,43 @@
                         <h3 class="text-lg font-bold text-white">Business Impact</h3>
                     </div>
                     <ul class="space-y-2 text-sm text-slate-300 font-light relative z-10">
-                        <li class="flex items-start gap-2"><span class="text-green-400">✔</span> ลดการใช้เอกสารและการติดตามงานด้วย Manual</li>
+                        <li class="flex items-start gap-2"><span class="text-green-400">✔</span> ลดการใช้เอกสารและการติดตามงานแบบ Manual</li>
                         <li class="flex items-start gap-2"><span class="text-green-400">✔</span> ลดความผิดพลาดจากการคีย์ข้อมูลซ้ำซ้อน</li>
-                        <li class="flex items-start gap-2"><span class="text-green-400">✔</span> เพิ่มความโปร่งใสในการติดตามสถานะงาน</li>
-                        <li class="flex items-start gap-2"><span class="text-green-400">✔</span> รองรับ Workflow มากกว่า 20 สถานะ และ 10 สถานีซ่อม</li>
+                        <li class="flex items-start gap-2"><span class="text-green-400">✔</span> รองรับ Workflow กว่า 20 สถานะ & 10 สถานีซ่อม</li>
                     </ul>
                 </div>
             </div>
 
-            <!-- Dashboard Images -->
+            <!-- Dashboard Images (Uncropped Layout) -->
             <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 mt-8">
-                <!-- Image 1: AppSheet Dashboard (NEW) -->
-                <div class="bg-white p-2 rounded-2xl border border-gray-200 minimal-shadow relative transform transition hover:scale-[1.02] duration-500">
-                    <img src="rizenicm.jpg" alt="RIZENIC SA Dashboard" class="w-full h-auto rounded-xl border border-gray-100 relative z-10" onerror="this.src='https://placehold.co/1000x500/e6f2eb/1a4d2e?text=RIZENIC+SA+Dashboard'">
-                    <div class="absolute top-4 right-4 bg-white/90 backdrop-blur px-3 py-1.5 rounded-lg shadow-sm border border-gray-100 text-xs font-semibold text-[#0F172A] z-20 flex items-center gap-2">
-                        <span class="w-2 h-2 rounded-full bg-orange-500 animate-pulse"></span> Operations View
+                <!-- Image 1: AppSheet Dashboard -->
+                <div class="bg-white p-4 rounded-2xl border border-gray-200 minimal-shadow relative transform transition hover:scale-[1.02] duration-500 flex flex-col">
+                    <h4 class="text-[#0F172A] font-semibold text-sm mb-3">1. Service Operations View</h4>
+                    <div class="flex-grow flex items-center justify-center bg-gray-50 rounded-xl p-2 border border-gray-100">
+                        <img src="rizenicm.jpg" alt="RIZENIC SA Dashboard" class="w-full h-auto object-contain" onerror="this.src='https://placehold.co/1000x500/e6f2eb/1a4d2e?text=AppSheet+View'">
                     </div>
                 </div>
 
                 <!-- Image 2: Looker Studio Summary -->
-                <div class="bg-white p-2 rounded-2xl border border-gray-200 minimal-shadow relative transform transition hover:scale-[1.02] duration-500">
-                    <img src="RIZENICDD.png" alt="RIZENIC Summary Dashboard" class="w-full h-auto rounded-xl border border-gray-100 relative z-10" onerror="this.src='https://placehold.co/1000x500/e6f2eb/1a4d2e?text=RIZENIC+Summary+Dashboard'">
-                    <div class="absolute top-4 right-4 bg-white/90 backdrop-blur px-3 py-1.5 rounded-lg shadow-sm border border-gray-100 text-xs font-semibold text-[#0F172A] z-20 flex items-center gap-2">
-                        <span class="w-2 h-2 rounded-full bg-green-500 animate-pulse"></span> Summary View
+                <div class="bg-white p-4 rounded-2xl border border-gray-200 minimal-shadow relative transform transition hover:scale-[1.02] duration-500 flex flex-col">
+                    <h4 class="text-[#0F172A] font-semibold text-sm mb-3">2. Executive Summary View</h4>
+                    <div class="flex-grow flex items-center justify-center bg-gray-50 rounded-xl p-2 border border-gray-100">
+                        <img src="RIZENICDD.png" alt="RIZENIC Summary Dashboard" class="w-full h-auto object-contain" onerror="this.src='https://placehold.co/1000x500/e6f2eb/1a4d2e?text=Summary+View'">
                     </div>
                 </div>
                 
                 <!-- Image 3: Looker Studio Analytics -->
-                <div class="bg-white p-2 rounded-2xl border border-gray-200 minimal-shadow relative transform transition hover:scale-[1.02] duration-500">
-                    <img src="RIZENICD.png" alt="RIZENIC Analytics Dashboard" class="w-full h-auto rounded-xl border border-gray-100 relative z-10" onerror="this.src='https://placehold.co/1000x500/e6f2eb/1a4d2e?text=RIZENIC+Analytics+Dashboard'">
-                    <div class="absolute top-4 right-4 bg-white/90 backdrop-blur px-3 py-1.5 rounded-lg shadow-sm border border-gray-100 text-xs font-semibold text-[#0F172A] z-20 flex items-center gap-2">
-                        <span class="w-2 h-2 rounded-full bg-blue-500 animate-pulse"></span> Analytics View
+                <div class="bg-white p-4 rounded-2xl border border-gray-200 minimal-shadow relative transform transition hover:scale-[1.02] duration-500 flex flex-col">
+                    <h4 class="text-[#0F172A] font-semibold text-sm mb-3">3. Detailed Analytics View</h4>
+                    <div class="flex-grow flex items-center justify-center bg-gray-50 rounded-xl p-2 border border-gray-100">
+                        <img src="RIZENICD.png" alt="RIZENIC Analytics Dashboard" class="w-full h-auto object-contain" onerror="this.src='https://placehold.co/1000x500/e6f2eb/1a4d2e?text=Analytics+View'">
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
+    <!-- Project 2: TERN Logistic -->
     <section id="tms" class="bg-white border-y border-gray-100">
         <div class="max-w-7xl mx-auto px-6">
             <div class="flex flex-col lg:flex-row gap-16 items-center">
