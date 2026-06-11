@@ -67,6 +67,16 @@
             overflow-y: auto;
         }
         .mockup-content::-webkit-scrollbar { width: 4px; }
+
+        /* เพิ่ม CSS สำหรับการพิมพ์เป็น PDF ให้สมบูรณ์แบบ ไม่ตกขอบและไม่ตัดกลางก้อนข้อความ */
+        @media print {
+            body { background-color: #F8FAFC !important; }
+            section, .bg-white, .mockup-browser, img, .rounded-3xl, .rounded-2xl {
+                break-inside: avoid;
+                page-break-inside: avoid;
+            }
+            nav { display: none !important; } /* ซ่อนแถบเมนูด้านบนเวลาพิมพ์ */
+        }
     </style>
 </head>
 <body class="antialiased selection:bg-[#0F172A] selection:text-white">
@@ -180,6 +190,7 @@
         </div>
     </section>
 
+    <!-- ปรับปรุง Section Architecture สำหรับ Responsive & PDF Print -->
     <section id="architecture" class="bg-[#F8FAFC]">
         <div class="max-w-7xl mx-auto px-6">
             <div class="text-center mb-16">
@@ -188,69 +199,94 @@
                 <div class="w-12 h-1 bg-[#0F172A] mx-auto mb-6"></div>
             </div>
 
-            <div class="bg-white p-8 md:p-12 rounded-3xl border border-gray-100 minimal-shadow overflow-x-auto">
-                <div class="min-w-[800px] flex flex-col items-center gap-8">
-                    <div class="flex justify-between w-full max-w-4xl px-10 relative">
-                        <div class="flex gap-6">
-                            <div class="text-center w-40">
-                                <div class="bg-slate-50 border border-slate-200 p-4 rounded-xl shadow-sm mb-2 font-semibold text-[#0F172A]"><span>🧑‍💼</span> Admin / SA</div>
+            <!-- นำ overflow-x-auto ออก และปรับการวาง Layout ให้อยู่ตรงกลางและยืดหยุ่น -->
+            <div class="bg-white p-6 md:p-12 rounded-3xl border border-gray-100 minimal-shadow">
+                <div class="w-full flex flex-col items-center gap-4 md:gap-8 max-w-4xl mx-auto">
+                    
+                    <!-- Layer 1: Users -->
+                    <div class="flex justify-between w-full">
+                        <div class="flex gap-2 md:gap-6 w-1/2 justify-center md:justify-start md:pl-8">
+                            <div class="text-center">
+                                <div class="bg-slate-50 border border-slate-200 p-2 md:p-4 rounded-xl shadow-sm mb-2 font-semibold text-[#0F172A] text-xs md:text-base"><span>🧑‍💼</span> Admin</div>
                             </div>
-                            <div class="text-center w-40">
-                                <div class="bg-slate-50 border border-slate-200 p-4 rounded-xl shadow-sm mb-2 font-semibold text-[#0F172A]"><span>👨‍🔧</span> Technicians</div>
+                            <div class="text-center">
+                                <div class="bg-slate-50 border border-slate-200 p-2 md:p-4 rounded-xl shadow-sm mb-2 font-semibold text-[#0F172A] text-xs md:text-base"><span>👨‍🔧</span> Techs</div>
                             </div>
                         </div>
-                        <div class="text-center w-48">
-                            <div class="bg-blue-50 border border-blue-200 p-4 rounded-xl shadow-sm mb-2 font-semibold text-blue-900"><span>👥</span> Customers</div>
+                        <div class="w-1/2 flex justify-center md:justify-end md:pr-12">
+                            <div class="text-center">
+                                <div class="bg-blue-50 border border-blue-200 p-2 md:p-4 rounded-xl shadow-sm mb-2 font-semibold text-blue-900 text-xs md:text-base"><span>👥</span> Customers</div>
+                            </div>
                         </div>
                     </div>
 
-                    <div class="flex justify-between w-full max-w-4xl px-20 text-gray-300">
-                        <div class="w-48 text-center text-2xl ml-8">⬇</div>
-                        <div class="w-48 text-center text-2xl mr-4">⬇</div>
+                    <!-- Layer 2: Arrows -->
+                    <div class="flex justify-between w-full text-gray-300">
+                        <div class="w-1/2 flex justify-center md:justify-start md:pl-24">
+                            <div class="text-xl md:text-2xl">⬇</div>
+                        </div>
+                        <div class="w-1/2 flex justify-center md:justify-end md:pr-24">
+                            <div class="text-xl md:text-2xl">⬇</div>
+                        </div>
                     </div>
 
-                    <div class="flex justify-between w-full max-w-4xl px-10">
-                        <div class="w-[45%] bg-green-50 border-2 border-green-200 rounded-2xl p-6 text-center relative shadow-sm">
-                            <span class="absolute -top-3 left-6 bg-white px-2 text-xs font-bold text-green-600 tracking-wider">INTERNAL TOOL</span>
-                            <div class="text-lg font-bold text-green-800 mb-1">AppSheet Mobile & Web App</div>
-                            <div class="text-xs text-green-600">Form Validation, QC Uploads, Workflow</div>
+                    <!-- Layer 3: Apps -->
+                    <div class="flex justify-between w-full gap-2 md:gap-6">
+                        <div class="w-1/2 bg-green-50 border-2 border-green-200 rounded-2xl p-4 md:p-6 text-center relative shadow-sm mt-3 md:mt-0 flex flex-col justify-center">
+                            <span class="absolute -top-3 left-1/2 -translate-x-1/2 md:translate-x-0 md:left-6 bg-white px-2 text-[10px] md:text-xs font-bold text-green-600 tracking-wider whitespace-nowrap border border-green-100 rounded">INTERNAL TOOL</span>
+                            <div class="text-sm md:text-lg font-bold text-green-800 mb-1 mt-2 md:mt-0 leading-tight">AppSheet Mobile & Web</div>
+                            <div class="text-[10px] md:text-xs text-green-600 leading-tight">Form Validation, QC, Workflow</div>
                         </div>
                         
-                        <div class="w-[45%] bg-indigo-50 border-2 border-indigo-200 rounded-2xl p-6 text-center relative shadow-sm">
-                            <span class="absolute -top-3 left-6 bg-white px-2 text-xs font-bold text-indigo-600 tracking-wider">CUSTOMER PORTAL</span>
-                            <div class="text-lg font-bold text-indigo-800 mb-1">Warranty Web App (HTML/JS)</div>
-                            <div class="text-xs text-indigo-600">Client-Side Logic, DOM Manipulation, Print API</div>
+                        <div class="w-1/2 bg-indigo-50 border-2 border-indigo-200 rounded-2xl p-4 md:p-6 text-center relative shadow-sm mt-3 md:mt-0 flex flex-col justify-center">
+                            <span class="absolute -top-3 left-1/2 -translate-x-1/2 md:translate-x-0 md:left-6 bg-white px-2 text-[10px] md:text-xs font-bold text-indigo-600 tracking-wider whitespace-nowrap border border-indigo-100 rounded">CUSTOMER PORTAL</span>
+                            <div class="text-sm md:text-lg font-bold text-indigo-800 mb-1 mt-2 md:mt-0 leading-tight">Warranty Web App</div>
+                            <div class="text-[10px] md:text-xs text-indigo-600 leading-tight">Client-Side Logic, DOM, API</div>
                         </div>
                     </div>
 
-                    <div class="flex justify-between w-full max-w-4xl px-24 text-gray-300">
-                        <div class="text-2xl ml-6">⬇</div>
-                        <div class="text-2xl mr-8">⬇</div>
+                    <!-- Layer 4: Arrows -->
+                    <div class="flex justify-between w-full text-gray-300">
+                        <div class="w-1/2 flex justify-center md:justify-start md:pl-24">
+                            <div class="text-xl md:text-2xl">⬇</div>
+                        </div>
+                        <div class="w-1/2 flex justify-center md:justify-end md:pr-24">
+                            <div class="text-xl md:text-2xl">⬇</div>
+                        </div>
                     </div>
 
-                    <div class="w-full max-w-4xl flex gap-6 justify-center items-center">
-                        <div class="w-2/5 bg-blue-50 border-2 border-blue-200 rounded-2xl p-6 text-center relative shadow-sm">
-                            <span class="absolute -top-3 left-6 bg-white px-2 text-xs font-bold text-blue-600 tracking-wider">MASTER DATABASE</span>
-                            <div class="text-xl font-bold text-blue-800 mb-1">Google Sheets (Data Lake)</div>
+                    <!-- Layer 5: Data/Backend -->
+                    <div class="w-full flex justify-between items-center gap-2 md:gap-6">
+                        <div class="w-[45%] bg-blue-50 border-2 border-blue-200 rounded-2xl p-4 md:p-6 text-center relative shadow-sm mt-3 md:mt-0 flex flex-col justify-center">
+                            <span class="absolute -top-3 left-1/2 -translate-x-1/2 md:translate-x-0 md:left-6 bg-white px-2 text-[10px] md:text-xs font-bold text-blue-600 tracking-wider whitespace-nowrap border border-blue-100 rounded">MASTER DATABASE</span>
+                            <div class="text-sm md:text-xl font-bold text-blue-800 mb-1 mt-2 md:mt-0 leading-tight">Google Sheets<br class="md:hidden"><span class="text-xs md:text-lg font-normal"> (Data Lake)</span></div>
                         </div>
 
-                        <div class="text-2xl text-gray-400 flex items-center gap-2"><span>⬅️</span><span>➡️</span></div>
+                        <div class="text-base md:text-2xl text-gray-400 flex flex-col md:flex-row items-center gap-1"><span>⬅️</span><span class="hidden md:inline">➡️</span><span class="md:hidden">➡️</span></div>
 
-                        <div class="w-2/5 bg-yellow-50 border-2 border-yellow-200 rounded-2xl p-6 text-center relative shadow-sm">
-                            <span class="absolute -top-3 left-6 bg-white px-2 text-xs font-bold text-yellow-600 tracking-wider">BACKEND & API ENGINE</span>
-                            <div class="text-xl font-bold text-yellow-800 mb-1">Google Apps Script (ES6)</div>
-                            <div class="text-sm text-yellow-700">Hash Map Search (O(1)), Webhooks</div>
+                        <div class="w-[45%] bg-yellow-50 border-2 border-yellow-200 rounded-2xl p-4 md:p-6 text-center relative shadow-sm mt-3 md:mt-0 flex flex-col justify-center">
+                            <span class="absolute -top-3 left-1/2 -translate-x-1/2 md:translate-x-0 md:left-6 bg-white px-2 text-[10px] md:text-xs font-bold text-yellow-600 tracking-wider whitespace-nowrap border border-yellow-100 rounded">BACKEND ENGINE</span>
+                            <div class="text-sm md:text-xl font-bold text-yellow-800 mb-1 mt-2 md:mt-0 leading-tight">Apps Script (ES6)</div>
+                            <div class="text-[10px] md:text-sm text-yellow-700 leading-tight">Hash Map Search, Webhooks</div>
                         </div>
                     </div>
                     
-                    <div class="w-full max-w-4xl text-center text-gray-300 mt-2">
-                        <div class="text-2xl mb-2 ml-[-15%]">⬇</div>
-                        <div class="w-[40%] bg-purple-50 border-2 border-purple-200 rounded-2xl p-6 text-center relative shadow-sm mx-auto ml-[5%]">
-                            <span class="absolute -top-3 left-6 bg-white px-2 text-xs font-bold text-purple-600 tracking-wider">EXECUTIVE BI</span>
-                            <div class="text-xl font-bold text-purple-800 mb-1">Looker Studio</div>
-                            <div class="text-sm text-purple-600">Real-Time Data Visualization</div>
+                    <!-- Layer 6: Arrows -> BI -->
+                    <div class="w-full flex justify-end text-gray-300 mt-1 md:-mt-2">
+                        <div class="w-[45%] flex justify-center md:justify-start md:pl-24">
+                            <div class="text-xl md:text-2xl md:mb-2">⬇</div>
                         </div>
                     </div>
+
+                    <!-- Layer 7: BI -->
+                    <div class="w-full flex justify-end">
+                        <div class="w-[45%] bg-purple-50 border-2 border-purple-200 rounded-2xl p-4 md:p-6 text-center relative shadow-sm mt-2 md:mt-0 flex flex-col justify-center">
+                            <span class="absolute -top-3 left-1/2 -translate-x-1/2 md:translate-x-0 md:left-6 bg-white px-2 text-[10px] md:text-xs font-bold text-purple-600 tracking-wider whitespace-nowrap border border-purple-100 rounded">EXECUTIVE BI</span>
+                            <div class="text-sm md:text-xl font-bold text-purple-800 mb-1 mt-2 md:mt-0 leading-tight">Looker Studio</div>
+                            <div class="text-[10px] md:text-sm text-purple-600 leading-tight">Real-Time Data Vis</div>
+                        </div>
+                    </div>
+
                 </div>
             </div>
         </div>
@@ -724,3 +760,4 @@
     </footer>
 </body>
 </html>
+```
